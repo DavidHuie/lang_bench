@@ -6,12 +6,16 @@
 ## Starting the servers
 
 ### Ruby
-`bundle install`
-`ruby app.rb`
+```
+bundle install
+ruby app.rb
+```
 
 ### Node
-`npm install`
-`node app.js`
+```
+npm install
+node app.js
+```
 
 ### Go
 `go run app.go`
