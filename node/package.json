@@ -1,0 +1,9 @@
+{
+  "name": "lang_bench",
+  "author": "David Huie",
+  "dependencies": {
+    "redis": "0.10.1 ",
+    "hiredis": "0.1.16 ",
+    "express": "3.5.1"
+  }
+}

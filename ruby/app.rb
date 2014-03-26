@@ -2,12 +2,13 @@ require 'json'
 require 'redis'
 require 'sinatra'
 
+set :port, 3001
+
 redis = Redis.new
 
 REDIS_LIST = 'test_list'
 
 get '/' do
-  payload = JSON(params)
-  redis.lpush(REDIS_LIST, payload)
-  redis.llen(REDIS_LIST).to_s
+  length = redis.lpush(REDIS_LIST, params['test'])
+  length.to_s
 end
