@@ -18,7 +18,9 @@ func httpHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	value := r.Form["test"][0]
 	response, _ := RedisConn.Do("lpush", REDIS_KEY, value)
-	fmt.Fprintf(w, strconv.Itoa(int(response.(int64))))
+	if response != nil {
+		fmt.Fprintf(w, strconv.Itoa(int(response.(int64))))
+	}
 }
 
 func main() {
