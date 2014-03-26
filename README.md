@@ -6,9 +6,11 @@
 ## Starting the servers
 
 ### Ruby
+`bundle install`
 `ruby app.rb`
 
 ### Node
+`npm install`
 `node app.js`
 
 ### Go
