@@ -1,5 +1,7 @@
 # lang_bench
 
+This a collection of code snippets that do the same thing: `lpush` a URL parameter into redis. To add a language, create a simple webapp that listens on port 3001. The app should then accept a single URL parameter, `test`, and then `lpush` its contents to the redis list titled `test_list`.
+
 ## Dependencies
 `brew install go redis node`
 
