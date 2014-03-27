@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/garyburd/redigo/redis"
 	"net/http"
+	"runtime"
 	"strconv"
 )
 
@@ -41,4 +42,6 @@ func newConn() (redis.Conn, error) {
 
 func init() {
 	RedisPool = redis.NewPool(newConn, REDIS_POOL_SIZE)
+	// Use all CPUs
+	runtime.GOMAXPROCS(runtime.NumCPU())
 }
