@@ -8,13 +8,16 @@ This a collection of code snippets that do the same thing: `lpush` a URL paramet
 ## Starting the servers
 
 ### Ruby
+
 ```
+cd ruby
 bundle install
 ruby app.rb
 ```
 
 ### Node
 ```
+cd node
 npm install
 node app.js
 ```
@@ -29,6 +32,7 @@ Install the redigo package:
 `go get github.com/garyburd/redigo/redis`
 
 Run the app:
+`cd go`
 `go run app.go`
 
 ### Java
