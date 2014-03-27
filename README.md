@@ -3,7 +3,7 @@
 This a collection of code snippets that do the same thing: `lpush` a URL parameter into redis. To add a language, create a simple webapp that listens on port 3001. The app should then accept a single URL parameter, `test`, and then `lpush` its contents to the redis list titled `test_list`.
 
 ## Dependencies
-`brew install go redis node`
+`brew install go redis node maven`
 
 ## Starting the servers
 
@@ -30,6 +30,12 @@ Install the redigo package:
 
 Run the app:
 `go run app.go`
+
+### Java
+```
+cd java
+mvn package jetty:run
+```
 
 ## To benchmark
 `./benchmark.sh`
