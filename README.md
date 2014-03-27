@@ -18,6 +18,15 @@ node app.js
 ```
 
 ### Go
+First, create your go workspace:
+```
+mkdir ~/go
+echo 'export GOPATH=~/go' >> ~/.zshrc
+```
+Install the redigo package:
+`go get github.com/garyburd/redigo/redis`
+
+Run the app:
 `go run app.go`
 
 ## To benchmark
