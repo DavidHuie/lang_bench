@@ -23,15 +23,22 @@ public class SendgridReceiver extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String data = req.getParameter(PARAMETER);
+		if( data == null ) {
+			resp.setStatus(500);
+			return;
+		}
 		Jedis redis = null;
 		try {
 			redis = REDIS.getResource();
-			redis.lpush(SENDGRID_QUEUE, data);
+			Long result = redis.lpush(SENDGRID_QUEUE, data);
+			if (result != null) {
+				resp.getOutputStream().print(result);
+			} else {
+				resp.setStatus(500);
+			}
 		} finally {
 			if (redis != null)
 				REDIS.returnResource(redis);
 		}
 	}
-
 }
-
